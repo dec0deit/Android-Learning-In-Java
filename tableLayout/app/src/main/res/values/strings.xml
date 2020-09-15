@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">tableLayout</string>
+    <string name="time">Time</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="submit">Submit</string>
+    <string name="this_is_row_1">This is Row 1</string>
+    <string name="row2">Row2</string>
+    <string name="column1">column1</string>
+    <string name="row4">Row4</string>
+    <string name="this_is_row_5">this is row 5</string>
+    <string name="row3">Row3</string>
+    <string name="column2">column2</string>
+    <string name="column3">column3</string>
 </resources>
