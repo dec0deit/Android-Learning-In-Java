@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">LoginPage</string>
+    <string name="username">Username</string>
+    <string name="password">password</string>
+    <string name="love_food">Love Food</string>
+    <string name="login">Login</string>
+    <string name="love_sports">Love Sports</string>
+    <string name="female">female</string>
+    <string name="male">male</string>
+    <string name="hello_world">Hello WOrld</string>
+</resources>
