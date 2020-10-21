@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Mine Seeker</string>
+    <string name="mine_seeker">Mine Seeker</string>
+    <string name="by_sanyam">By Sanyam</string>
+    <string name="skip">Skip</string>
+    <string name="main_menu">Main Menu</string>
+    <string name="todo">TODO</string>
+    <string name="play_game">play game</string>
+    <string name="option">option</string>
+    <string name="help">help</string>
+    <string name="textview">TextView</string>
+    <string name="string_textview" />
+    <string name="in_this_game_you_need_to_avoid_mines_by_clicking_the_tiles">\"In this game,You need to avoid mines by clicking the tiles \"</string>
+    <string name="set_options">Set Options</string>
+    <string name="mines">Mines</string>
+    <string name="board_size">Board Size</string>
+</resources>
