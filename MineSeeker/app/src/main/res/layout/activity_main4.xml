@@ -8,8 +8,8 @@
 
     <TextView
         android:id="@+id/helpDetail"
-        android:layout_width="582dp"
-        android:layout_height="335dp"
+        android:layout_width="485dp"
+        android:layout_height="128dp"
         android:layout_marginStart="107dp"
         android:layout_marginTop="65dp"
         android:layout_marginEnd="106dp"
@@ -21,4 +21,20 @@
         app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/helpHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="102dp"
+        android:layout_marginEnd="525dp"
+        android:layout_marginBottom="21dp"
+        android:text="help"
+        app:layout_constraintBottom_toTopOf="@+id/helpDetail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

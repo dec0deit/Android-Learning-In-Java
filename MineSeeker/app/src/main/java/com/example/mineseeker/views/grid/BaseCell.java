@@ -7,30 +7,34 @@ import com.example.mineseeker.GameEngine;
 
 public abstract class BaseCell extends View {
 
-    private int val;
+    private int value;
     private boolean isBomb;
+    private boolean isRevealed;
     private boolean isClicked;
     private boolean isFlagged;
-    private  boolean isRevealed;
-    private  int x,y;
+
+    private int x , y;
     private int position;
-    public BaseCell(Context context) {
+
+    public BaseCell(Context context ){
         super(context);
     }
 
-    public int getVal() {
-        return val;
+    public int getValue() {
+        return value;
     }
 
-    public void setVal(int val) {
-        isBomb=false;
-        isRevealed=false;
-        isClicked=false;
-        isFlagged=false;
-        if(val==-1){
-            isBomb=true;
+    public void setValue(int value) {
+        isBomb = false;
+        isRevealed = false;
+        isClicked = false;
+        isFlagged = false;
+
+        if( value == -1 ){
+            isBomb = true;
         }
-        this.val = val;
+
+        this.value = value;
     }
 
     public boolean isBomb() {
@@ -41,13 +45,23 @@ public abstract class BaseCell extends View {
         isBomb = bomb;
     }
 
+    public boolean isRevealed() {
+        return isRevealed;
+    }
+
+    public void setRevealed() {
+        isRevealed = true;
+        invalidate();
+    }
+
     public boolean isClicked() {
         return isClicked;
     }
 
     public void setClicked() {
-        isClicked = true;
-        this.isRevealed=true;
+        this.isClicked = true;
+        this.isRevealed = true;
+
         invalidate();
     }
 
@@ -59,31 +73,24 @@ public abstract class BaseCell extends View {
         isFlagged = flagged;
     }
 
-    public boolean isRevealed() {
-        return isRevealed;
-    }
-
-    public void setRevealed(boolean revealed) {
-        isRevealed = revealed;
-    }
-
     public int getXPos() {
         return x;
     }
-
 
     public int getYPos() {
         return y;
     }
 
-
     public int getPosition() {
         return position;
     }
 
-    public void setPosition(int position) {
-        this.position = position;
-        x=position% GameEngine.WIDTH;
-        y=position%GameEngine.HEIGHT;
+    public void setPosition( int x , int y ){
+        this.x = x;
+        this.y = y;
+
+        this.position = y * GameEngine.WIDTH + x;
+
+        invalidate();
     }
 }

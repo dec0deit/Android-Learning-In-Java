@@ -14,4 +14,5 @@
     <string name="set_options">Set Options</string>
     <string name="mines">Mines</string>
     <string name="board_size">Board Size</string>
+    <string name="help_heading">help Heading</string>
 </resources>

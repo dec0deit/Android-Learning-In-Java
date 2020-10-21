@@ -11,23 +11,27 @@ import com.example.mineseeker.GameEngine;
 
 public class Grid extends GridView {
 
-    public Grid(Context context, AttributeSet attr){
-        super(context,attr);
+
+    public Grid(Context context , AttributeSet attrs){
+        super(context,attrs);
+
         GameEngine.getInstance().createGrid(context);
+
         setNumColumns(GameEngine.WIDTH);
-        setAdapter(new GridAdaptor() );
+        setAdapter(new GridAdapter());
     }
+
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
-    private class GridAdaptor extends BaseAdapter{
+    private class GridAdapter extends BaseAdapter{
 
         @Override
         public int getCount() {
-            return GameEngine.getInstance().WIDTH*GameEngine.getInstance().HEIGHT;
+            return GameEngine.getInstance().WIDTH * GameEngine.getInstance().HEIGHT;
         }
 
         @Override
