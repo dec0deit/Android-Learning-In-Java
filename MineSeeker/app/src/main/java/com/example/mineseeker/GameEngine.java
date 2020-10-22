@@ -4,31 +4,23 @@ import android.content.Context;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
-
 import com.example.mineseeker.util.Generator;
 import com.example.mineseeker.util.PrintGrid;
 import com.example.mineseeker.views.grid.Cell;
-
 public class GameEngine {
     private static GameEngine instance;
-
-    public static final int BOMB_NUMBER = 10;
-    public static final int WIDTH = 10;
-    public static final int HEIGHT = 16;
-
+    public static final int BOMB_NUMBER = 5;
+    public static final int WIDTH = 5;
+    public static final int HEIGHT = 5;
     private Context context;
-
     private Cell[][] MineSeekerGrid = new Cell[WIDTH][HEIGHT];
-
     public static GameEngine getInstance() {
         if( instance == null ){
             instance = new GameEngine();
         }
         return instance;
     }
-
     private GameEngine(){ }
-
     public void createGrid(Context context){
         Log.e("GameEngine","createGrid is working");
         this.context = context;
@@ -38,7 +30,6 @@ public class GameEngine {
         PrintGrid.print(GeneratedGrid,WIDTH,HEIGHT);
         setGrid(context,GeneratedGrid);
     }
-
     private void setGrid( final Context context, final int[][] grid ){
         for( int x = 0 ; x < WIDTH ; x++ ){
             for( int y = 0 ; y < HEIGHT ; y++ ){
@@ -50,18 +41,15 @@ public class GameEngine {
             }
         }
     }
-
     public Cell getCellAt(int position) {
         int x = position % WIDTH;
         int y = position / WIDTH;
 
         return MineSeekerGrid[x][y];
     }
-
     public Cell getCellAt( int x , int y ){
         return MineSeekerGrid[x][y];
     }
-
     public void click( int x , int y ){
         if( x >= 0 && y >= 0 && x < WIDTH && y < HEIGHT && !getCellAt(x,y).isClicked() ){
             getCellAt(x,y).setClicked();
@@ -80,10 +68,8 @@ public class GameEngine {
                 onGameLost();
             }
         }
-
         checkEnd();
     }
-
     private boolean checkEnd(){
         int bombNotFound = BOMB_NUMBER;
         int notRevealed = WIDTH * HEIGHT;
@@ -104,17 +90,14 @@ public class GameEngine {
         }
         return false;
     }
-
     public void flag( int x , int y ){
         boolean isFlagged = getCellAt(x,y).isFlagged();
         getCellAt(x,y).setFlagged(!isFlagged);
         getCellAt(x,y).invalidate();
     }
-
     private void onGameLost(){
         // handle lost game
         Toast.makeText(context,"Game lost", Toast.LENGTH_SHORT).show();
-
         for ( int x = 0 ; x < WIDTH ; x++ ) {
             for (int y = 0; y < HEIGHT; y++) {
                 getCellAt(x,y).setRevealed();

@@ -10,7 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity2 extends AppCompatActivity {
+
+//this is the final activity where game starts
+public class MainActivity2 extends Activity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
